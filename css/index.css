@@ -1,1 +1,291 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Bitter Bold'), local('Bitter-Bold'), url(https://fonts.gstatic.com/s/bitter/v15/rax_HiqOu8IVPmnzxKlMBA.ttf) format('truetype');
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1.1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+/* MY CODE FROM HERE DOWN */
+/* These are my variables */
+/* These are my mixins */
+.container-all {
+  width: 100%;
+  display: flex;
+  /* BELOW HERE IS THE STATIS SIDEBAR */
+  /* BELOW HERE IS THE RIGHT SIDE THAT SCROLLS */
+}
+.container-all .sidebar {
+  max-width: 30%;
+  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+  border-right: 3px solid black;
+}
+.container-all .sidebar h1 {
+  font-size: 4rem;
+  margin: 3%;
+}
+.container-all .sidebar h2 {
+  font-size: 3rem;
+  color: darkblue;
+  margin: 1%;
+  margin-top: 15%;
+  text-align: left;
+  font-family: 'Bitter', serif;
+}
+.container-all .sidebar p {
+  font-size: 2rem;
+  margin: 1%;
+  text-align: left;
+}
+.container-all .sidebar ul li {
+  margin: 1%;
+  font-size: 1.5rem;
+}
+.container-all .sidebar .my-face {
+  width: 100%;
+  height: 300px;
+  border: 20px outset silver;
+  background-color: darkblue;
+}
+.container-all .sidebar img {
+  height: 100%;
+  width: 100%;
+}
+.container-all .sidebar nav {
+  text-align: center;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+}
+.container-all .sidebar nav a {
+  text-decoration: none;
+  font-size: 2.5rem;
+  margin: 1%;
+  color: blue;
+}
+.container-all .sidebar nav p {
+  text-align: center;
+  font-size: 2.5rem;
+  text-decoration: underline;
+  line-height: 1.5;
+}
+@media (max-width: 500px) {
+  .container-all .sidebar h1 {
+    font-size: 2rem;
+  }
+  .container-all .sidebar h2 {
+    font-size: 1.25rem;
+  }
+  .container-all .sidebar p {
+    font-size: 1rem;
+  }
+  .container-all .sidebar nav a {
+    font-size: 1.25rem;
+  }
+  .container-all .sidebar nav p {
+    font-size: 1.25rem;
+  }
+  .container-all .sidebar .my-face {
+    height: 150px;
+  }
+  .container-all .sidebar ul li {
+    font-size: 1rem;
+  }
+}
+.container-all .container-scroll {
+  max-width: 70%;
+  display: flex;
+  flex-direction: column;
+  background-color: #6e6d6c;
+}
+.container-all .container-scroll h2 {
+  text-align: center;
+  font-size: 3.5rem;
+  margin: 2%;
+  color: #8c8cd1;
+}
+.container-all .container-scroll h3 {
+  text-align: left;
+  font-size: 2.5rem;
+  margin: 2%;
+  padding: 0 3% 0 3%;
+  color: #000000;
+  font-weight: bold;
+}
+.container-all .container-scroll p {
+  text-align: left;
+  font-size: 2rem;
+  margin: 2%;
+  padding: 0 3% 0 3%;
+  color: #c8b3b3;
+}
+.container-all .container-scroll .work-history {
+  display: flex;
+  flex-direction: column;
+  margin: 2%;
+}
+.container-all .container-scroll .education {
+  display: flex;
+  flex-direction: column;
+  margin: 2%;
+}
+.container-all .container-scroll .accomplishments {
+  display: flex;
+  flex-direction: column;
+  margin: 2%;
+}
+.container-all .container-scroll .accomplishments ul li {
+  margin: 3%;
+  padding-left: 3%;
+  font-size: 2rem;
+  color: white;
+}
+@media (max-width: 500px) {
+  .container-all .container-scroll h2 {
+    font-size: 1.75rem;
+  }
+  .container-all .container-scroll h3 {
+    font-size: 1.25rem;
+  }
+  .container-all .container-scroll p {
+    font-size: 1rem;
+  }
+  .container-all .container-scroll .accomplishments ul li {
+    font-size: 1.25rem;
+  }
+}
