@@ -19,18 +19,20 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
-	border: 0;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@700&display=swap');
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+	line-height: 1.1;
 }
 ol, ul {
 	list-style: none;
@@ -50,10 +52,199 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
 }
 
-html, body {
-    height: 100%;
+/* MY CODE FROM HERE DOWN */
+
+
+/* These are my variables */
+@h2-color: darkblue;
+@h2-font: 'Bitter', serif;
+
+
+/* These are my mixins */
+.column(){
+	display: flex;
+	flex-direction: column;
 }
+
+.width100pct(){
+	width: 100%; 
+}
+
+.container-all {
+	width: 100%;
+	display: flex;
+
+/* BELOW HERE IS THE STATIS SIDEBAR */
+
+
+	.sidebar {
+		max-width: 30%;
+		background-color: lightblue;
+		.column();
+		border-right: 3px solid black;
+	
+		h1 {
+			font-size: 4rem;
+			margin: 3%;
+		}
+	
+		h2 {
+			font-size: 3rem;
+			color: @h2-color;
+			margin: 1%;
+			margin-top: 15%;
+			text-align: left;
+			font-family: @h2-font;	
+		}
+	
+		p {
+			font-size: 2rem;
+			margin: 1%;
+			text-align: left;
+		}
+	
+		ul li {
+			margin: 1%;
+			font-size: 1.5rem;
+		}
+
+		.my-face {
+			.width100pct();
+			height: 300px;
+			border: 20px outset silver;
+			background-color: @h2-color;
+		}
+
+		img {
+			height: 100%;
+			.width100pct();
+		}
+
+		nav {
+			text-align: center;
+			margin-top: 5%;
+			.column();
+
+			a {
+				text-decoration: none;
+				font-size: 2.5rem;
+				margin: 1%;
+				color: blue;
+			}
+
+			p {
+				text-align: center;
+				font-size: 2.5rem;
+				text-decoration: underline;
+				line-height: 1.5;
+			}
+		}
+
+
+
+		@media (max-width: 500px) {
+			h1 {
+				font-size: 2rem;
+			}
+			h2 {
+				font-size: 1.25rem;
+			}
+			p {
+				font-size: 1rem;
+			}
+			nav a {
+				font-size: 1.25rem;
+			}
+			nav p {
+				font-size: 1.25rem;
+			}
+			.my-face {
+				height: 150px;
+			}
+			ul li {
+				font-size: 1rem;
+			}
+
+		}
+	}
+
+/* BELOW HERE IS THE RIGHT SIDE THAT SCROLLS */
+
+	.container-scroll {
+		max-width: 70%;
+		.column();
+		background-color: rgb(110, 109, 108);
+	
+		h2 {
+			text-align: center;
+			font-size: 3.5rem;
+			margin: 2%;
+			color: rgb(140, 140, 209);
+		}
+	
+		h3 {
+			text-align: left;
+			font-size: 2.5rem;
+			margin: 2%;
+			padding: 0 3% 0 3%;
+			color: rgb(0, 0, 0);
+			font-weight: bold;
+		}
+		
+		p {
+			text-align: left;
+			font-size: 2rem;
+			margin: 2%;
+			padding: 0 3% 0 3%;
+			color: rgb(200, 179, 179);
+		}
+	
+		.work-history {
+			.column();
+			margin: 2%;
+		}
+	
+		.education {
+			.column();
+			margin: 2%;
+		}
+	
+		.accomplishments {
+			.column();
+			margin: 2%;
+	
+			ul li {
+				margin: 3%;
+				padding-left: 3%;
+				font-size: 2rem;
+				color: white;
+			}
+		}
+
+		@media (max-width: 500px) {
+			h2{
+				font-size: 1.75rem;
+			}
+			h3 {
+				font-size: 1.25rem;
+			}
+			p {
+				font-size: 1rem;
+			}
+			.accomplishments ul li {
+				font-size: 1.25rem;
+			}
+		}
+	}
+}
+
+
+
+
 
